@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
   validates :description, presence: true, length: { maximum: 140}
   validates :welcome_message, presence: true
   belongs_to :city
+  belongs_to :admin, foreign_key: 'admin_id', class_name: 'User'
   has_many :reservations
   has_many :users, through: :reservations
-  has_many :admin, foreign_key: 'admin_id', class_name: "Reservation"
 end

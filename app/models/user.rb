@@ -12,3 +12,4 @@ class User < ApplicationRecord
   has_many :guest, foreign_key: 'guest_id', class_name: "Reservation"
   has_many :admin, foreign_key: 'admin_id', class_name: "Listing"
 end
+

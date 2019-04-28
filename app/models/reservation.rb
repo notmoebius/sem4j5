@@ -2,8 +2,9 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :listing
   # à gérer les 
-  #belongs_to :guest, class_name: "User"
-  #belongs_to :admin, class_name: "User"
+  belongs_to :guest, class_name: "User"
+  belongs_to :admin, class_name: "Listing"
+
 
   def start_must_be_before_end_time
     errors.add(:start_date, "must be before end time") unless
